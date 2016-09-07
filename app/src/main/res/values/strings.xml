@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Pehechano</string>
+    <string name="dummy_login">ravi@iaccept</string>
+    <string name="dummy_password">ravi@iaccept</string>
 </resources>
