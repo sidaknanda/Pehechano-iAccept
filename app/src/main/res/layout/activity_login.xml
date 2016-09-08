@@ -18,8 +18,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:paddingLeft="@dimen/margin_large"
-            android:paddingRight="@dimen/margin_large"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
             android:src="@drawable/splash_img" />
 
         <RelativeLayout

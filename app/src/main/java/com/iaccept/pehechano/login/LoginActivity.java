@@ -40,6 +40,9 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     // TODO setup and store login sharedpreferences
                     finish();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    passwordEditText.setText("");
                 }
             }
         });
