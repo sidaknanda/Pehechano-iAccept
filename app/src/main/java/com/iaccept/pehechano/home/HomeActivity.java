@@ -1,5 +1,8 @@
 package com.iaccept.pehechano.home;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,13 +14,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.iaccept.pehechano.R;
+import com.iaccept.pehechano.common.Constants;
 import com.iaccept.pehechano.home.account.AccountsFragment;
 import com.iaccept.pehechano.home.dashboard.DashboardFragment;
 import com.iaccept.pehechano.home.employees.EmployeesFragment;
 import com.iaccept.pehechano.home.logout.LogoutFragment;
 import com.iaccept.pehechano.home.staff.StaffFragment;
+import com.iaccept.pehechano.login.LoginActivity;
 
 import java.util.ArrayList;
 
@@ -94,48 +100,27 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                /*switch (position) {
+                switch (position) {
                     case 0:
-                        RequestFinishEvent requestFinishEvent1 = new RequestFinishEvent();
-                        requestFinishEvent1.setRequestResponse(null);
-                        EventBus.getDefault().post(requestFinishEvent1);
-
-                        if (viewPagerAdapter.getItem(0) instanceof RequestFragment) {
-                            drawerLayout.closeDrawers();
-                            break;
-                        }
-                        viewPagerAdapter.setFragments(requestFragment, responseFragment);
-                        viewPager.setCurrentItem(0);
-                        drawerLayout.closeDrawers();
                         break;
                     case 1:
-
-                        RequestFinishEvent requestFinishEvent2 = new RequestFinishEvent();
-                        requestFinishEvent2.setRequestResponse(null);
-                        EventBus.getDefault().post(requestFinishEvent2);
-
-                        if (viewPagerAdapter.getItem(0) instanceof GcmFcmFragment) {
-                            drawerLayout.closeDrawers();
-                            break;
-                        }
-                        viewPagerAdapter.setFragments(gcmFcmFragment, responseFragment);
-
-                        viewPager.setCurrentItem(0);
-                        drawerLayout.closeDrawers();
                         break;
 
                     case 2:
-                        drawerLayout.closeDrawers();
-                        Intent intentSettings = new Intent(getApplicationContext(), SettingsActivity.class);
-                        startActivity(intentSettings);
                         break;
 
                     case 3:
-                        drawerLayout.closeDrawers();
-                        Intent intentAbout = new Intent(getApplicationContext(), AboutActivity.class);
-                        startActivity(intentAbout);
                         break;
-                }*/
+
+                    case 4:
+                        SharedPreferences.Editor editor = getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE).edit();
+                        editor.remove(Constants.PREFERENCES_USERNAME);
+                        editor.remove(Constants.PREFERENCES_PASSWORD);
+                        editor.apply();
+                        Toast.makeText(HomeActivity.this, "Logout Success", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+                        finish();
+                }
             }
         });
     }

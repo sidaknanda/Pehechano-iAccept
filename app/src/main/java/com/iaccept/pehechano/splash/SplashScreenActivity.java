@@ -1,14 +1,16 @@
 package com.iaccept.pehechano.splash;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
+import com.iaccept.pehechano.R;
 import com.iaccept.pehechano.common.Constants;
 import com.iaccept.pehechano.home.HomeActivity;
 import com.iaccept.pehechano.login.LoginActivity;
-import com.iaccept.pehechano.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -21,8 +23,12 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                // TODO check sharedpreferences and launch either login or home
-                startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
+                SharedPreferences preferences = getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE);
+                if (preferences.getString(Constants.PREFERENCES_USERNAME, null) == null) {
+                    startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+                } else {
+                    startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
+                }
                 finish();
             }
         }, Constants.SPLASH_TIME_OUT);

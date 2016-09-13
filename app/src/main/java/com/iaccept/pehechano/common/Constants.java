@@ -4,9 +4,14 @@ public class Constants {
 
     public static final long SPLASH_TIME_OUT = 1000;
 
-    String[] gender = {"Male", "Female", "Other"};
-    String[] bloodGroup = {"O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"};
-    String[] employerType = {"Primary", "Secondary", "Temporary"};
-    String[] employmentCategory = {"House Keeping", "Staff", "Other"};
-    String[] governmentIdType = {"PAN Card", "Aadhar Card", "Driving License", "Voter ID", "Passport"};
+    public static final String[] GENDER = {"Male", "Female", "Other"};
+    public static final String[] BLOOD_GROUP = {"O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"};
+    public static final String[] EMPLOYER_TYPE = {"Primary", "Secondary", "Temporary"};
+    public static final String[] EMPLOYER_CATEGORY = {"House Keeping", "Staff", "Other"};
+    public static final String[] GOVERNMENT_ID_TYPE = {"PAN Card", "Aadhar Card", "Driving License", "Voter ID", "Passport"};
+
+    public static final String PREFERENCES = "Pehechano_Preferences";
+    public static final String PREFERENCES_USERNAME = "Pehechano_Username";
+    public static final String PREFERENCES_PASSWORD = "Pehechano_Password";
+
 }

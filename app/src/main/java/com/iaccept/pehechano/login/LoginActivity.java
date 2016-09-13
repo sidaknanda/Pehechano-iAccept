@@ -1,6 +1,8 @@
 package com.iaccept.pehechano.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.iaccept.pehechano.R;
+import com.iaccept.pehechano.common.Constants;
 import com.iaccept.pehechano.home.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -36,9 +39,10 @@ public class LoginActivity extends AppCompatActivity {
                 String enteredPassword = String.valueOf(passwordEditText.getText()).trim();
 
                 if (enteredEmail.equals(getString(R.string.dummy_login)) && enteredPassword.equals(getString(R.string.dummy_password))) {
+
+                    saveLoginCreds(enteredEmail, enteredPassword);
                     Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                    // TODO setup and store login sharedpreferences
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
@@ -46,5 +50,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void saveLoginCreds(String username, String password) {
+        SharedPreferences.Editor editor = getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE).edit();
+        editor.putString(Constants.PREFERENCES_USERNAME, username);
+        editor.putString(Constants.PREFERENCES_PASSWORD, password);
+        editor.apply();
     }
 }
