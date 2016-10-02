@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.iaccept.pehechano.search.SearchActivity">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/splash_img"
+        android:id="@+id/imageView"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:adjustViewBounds="true" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editTextSearchPhone"
+        android:layout_marginStart="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="40dp"
+        android:hint="Enter Phone Number"
+        android:singleLine="true"
+        android:selectAllOnFocus="false"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_login_arrow"
+        android:id="@+id/buttonSearchPhone"
+        app:backgroundTint="@color/lightGrey"
+        app:layout_constraintRight_toRightOf="@+id/editTextSearchPhone"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextSearchPhone"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearchPhone"
+        android:clickable="true" />
+
+    <TextView
+        android:text="Search By Phone Number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:gravity="center"
+        android:background="@drawable/buttonshape"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent" />
+</android.support.constraint.ConstraintLayout>

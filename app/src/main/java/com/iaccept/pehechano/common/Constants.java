@@ -14,4 +14,5 @@ public class Constants {
     public static final String PREFERENCES_USERNAME = "Pehechano_Username";
     public static final String PREFERENCES_PASSWORD = "Pehechano_Password";
 
+    public static final String SEARCH_URL = "http://pehechano-iaccepttesting.rhcloud.com/webresources/UserService/showEmployeeDetailsByMobile/";
 }

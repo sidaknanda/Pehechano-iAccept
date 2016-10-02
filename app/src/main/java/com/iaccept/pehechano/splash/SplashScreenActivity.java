@@ -11,6 +11,7 @@ import com.iaccept.pehechano.R;
 import com.iaccept.pehechano.common.Constants;
 import com.iaccept.pehechano.home.HomeActivity;
 import com.iaccept.pehechano.login.LoginActivity;
+import com.iaccept.pehechano.search.SearchActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
                 SharedPreferences preferences = getSharedPreferences(Constants.PREFERENCES, Context.MODE_PRIVATE);
                 if (preferences.getString(Constants.PREFERENCES_USERNAME, null) == null) {
-                    startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
+                    startActivity(new Intent(SplashScreenActivity.this, SearchActivity.class));
                 } else {
                     startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
                 }
